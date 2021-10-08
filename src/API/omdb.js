@@ -13,9 +13,9 @@ const Omdb = ({ movieTitle, movies }) => {
   }, [movieTitle]);
   return (
     <div>
-      <Movies movieData={movieData} movies={movies} />;
+      <Movies movieData={movieData} movies={movies} />
     </div>
-  );
-};
+  )
+}
 
 export default Omdb;

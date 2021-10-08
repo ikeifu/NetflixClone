@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Omdb from '../API/omdb';
+import React, { useState, useEffect } from 'react'
 const Search = ({movieTitle, setMovieTitle}) => {
     const [currentMovie,setCurrentMovie] = useState("")
     const submitButtonHandler = () => {
@@ -20,4 +19,4 @@ const Search = ({movieTitle, setMovieTitle}) => {
     </>)
 }
 
-export default Search;
+export default Search
