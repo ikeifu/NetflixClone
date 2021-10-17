@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, addDoc, doc, setDoc, updateDoc } from "firebase/firestore";
-const Movies = ({ movieData, movies }) => {
+const Movies = ({ movieData, reviewedMovies }) => {
   const [receivedMovieRequest, setReceivedMovieRequest] = useState(true);
   useEffect(() => {
     if (movieData) {
@@ -31,8 +31,8 @@ const Movies = ({ movieData, movies }) => {
   };
 
   const getMovieLikes = (currentMovie, rating) => {
-    for (let i = 0; i < movies.length; i++) {
-      const movie = movies[i];
+    for (let i = 0; i < reviewedMovies.length; i++) {
+      const movie = reviewedMovies[i];
       const movieTitle = movie.title;
       if (movieTitle === currentMovie) {
         return movie[rating];
@@ -46,7 +46,7 @@ const Movies = ({ movieData, movies }) => {
   };
 
   const renderMovies = () =>
-    movieData.length > 1
+    movieData > 1
       ? movieData.map((movie) => (
           <li>
             <h1>{movie.Title}</h1>

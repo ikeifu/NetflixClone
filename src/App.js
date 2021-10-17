@@ -8,9 +8,10 @@ import Omdb from "./API/omdb";
 
 function App() {
   const [movieTitle, setMovieTitle] = useState("");
-  const [reviewedMovies, setReviewedMovies] = useState([]);
+  const [reviewedMovies, setReviewedMovies] = useState({});
 
   const moviesCollectionRef = collection(db, "movies");
+  console.log(reviewedMovies);
   useEffect(
     () =>
       onSnapshot(moviesCollectionRef, (response) =>
@@ -26,7 +27,7 @@ function App() {
   return (
     <div>
       <Search movieTitle={movieTitle} setMovieTitle={setMovieTitle} />
-      <Omdb movieTitle={movieTitle} movies={reviewedMovies} />
+      <Omdb movieTitle={movieTitle} reviewedMovies={reviewedMovies} />
     </div>
   );
 }
