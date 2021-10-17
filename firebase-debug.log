@@ -1,0 +1,80 @@
+[debug] [2021-10-17T17:56:13.001Z] ----------------------------------------------------------------------
+[debug] [2021-10-17T17:56:13.003Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\keith\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2021-10-17T17:56:13.003Z] CLI Version:   9.20.0
+[debug] [2021-10-17T17:56:13.003Z] Platform:      win32
+[debug] [2021-10-17T17:56:13.003Z] Node Version:  v14.18.0
+[debug] [2021-10-17T17:56:13.004Z] Time:          Sun Oct 17 2021 13:56:13 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-10-17T17:56:13.004Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-17T17:56:13.054Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-17T17:56:13.055Z] > authorizing via signed-in user (keithfungsen@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project like-trackers. This may result in unexpected behavior. 
+[debug] [2021-10-17T17:56:13.075Z] [hub] writing locator at C:\Users\keith\AppData\Local\Temp\hub-like-trackers.json
+[debug] [2021-10-17T17:56:13.098Z] > refreshing access token with scopes: []
+[debug] [2021-10-17T17:56:13.098Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-10-17T17:56:13.152Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sun, 17 Oct 2021 17:56:12 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-10-17T17:56:13.161Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/like-trackers/sites 
+[debug] [2021-10-17T17:56:13.447Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/like-trackers/sites 200
+[debug] [2021-10-17T17:56:13.447Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/like-trackers/sites {"sites":[{"name":"projects/1089063642969/sites/like-trackers","defaultUrl":"https://like-trackers.web.app","appId":"1:1089063642969:web:cedcdf89f48c756dd54e48","type":"DEFAULT_SITE"}]}
+[debug] [2021-10-17T17:56:13.447Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/like-trackers/webApps/1:1089063642969:web:cedcdf89f48c756dd54e48/config [none]
+[debug] [2021-10-17T17:56:13.779Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/like-trackers/webApps/1:1089063642969:web:cedcdf89f48c756dd54e48/config 200
+[debug] [2021-10-17T17:56:13.779Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/like-trackers/webApps/1:1089063642969:web:cedcdf89f48c756dd54e48/config {"projectId":"like-trackers","appId":"1:1089063642969:web:cedcdf89f48c756dd54e48","databaseURL":"https://like-trackers-default-rtdb.firebaseio.com","storageBucket":"like-trackers.appspot.com","locationId":"us-central","apiKey":"AIzaSyCCWyZLXHWimGLoKEIpy1eJhxCvlq2xdSM","authDomain":"like-trackers.firebaseapp.com","messagingSenderId":"1089063642969","measurementId":"G-LP1YSZVG5M"}
+[info] i  hosting: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[warn] !  emulators: The Emulator UI requires a project ID to start. Configure your default project with 'firebase use' or pass the --project flag. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI requires a project ID to start. Configure your default project with 'firebase use' or pass the --project flag."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┐
+│ Emulator │ Host:Port      │
+├──────────┼────────────────┤
+│ Hosting  │ localhost:5000 │
+└──────────┴────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: None
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET / HTTP/1.1" 200 4596 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET / HTTP/1.1\" 200 4596 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[debug] [2021-10-17T17:56:20.348Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-app-compat.js [none]
+[debug] [2021-10-17T17:56:20.372Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-app-compat.js 200
+[debug] [2021-10-17T17:56:20.372Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-app-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/9.1.3/firebase-app-compat.js HTTP/1.1" 200 21265 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/9.1.3/firebase-app-compat.js HTTP/1.1\" 200 21265 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[debug] [2021-10-17T17:56:20.377Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-auth-compat.js [none]
+[debug] [2021-10-17T17:56:20.399Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-auth-compat.js 200
+[debug] [2021-10-17T17:56:20.399Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-auth-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/9.1.3/firebase-auth-compat.js HTTP/1.1" 200 121869 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/9.1.3/firebase-auth-compat.js HTTP/1.1\" 200 121869 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[debug] [2021-10-17T17:56:20.416Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-database-compat.js [none]
+[debug] [2021-10-17T17:56:20.443Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-database-compat.js 200
+[debug] [2021-10-17T17:56:20.444Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-database-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/9.1.3/firebase-database-compat.js HTTP/1.1" 200 168289 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/9.1.3/firebase-database-compat.js HTTP/1.1\" 200 168289 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[debug] [2021-10-17T17:56:20.462Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore-compat.js [none]
+[debug] [2021-10-17T17:56:20.488Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore-compat.js 200
+[debug] [2021-10-17T17:56:20.488Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/9.1.3/firebase-firestore-compat.js HTTP/1.1" 200 277153 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/9.1.3/firebase-firestore-compat.js HTTP/1.1\" 200 277153 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[debug] [2021-10-17T17:56:20.515Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-functions-compat.js [none]
+[debug] [2021-10-17T17:56:20.536Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-functions-compat.js 200
+[debug] [2021-10-17T17:56:20.536Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-functions-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/9.1.3/firebase-functions-compat.js HTTP/1.1" 200 7942 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/9.1.3/firebase-functions-compat.js HTTP/1.1\" 200 7942 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[debug] [2021-10-17T17:56:20.538Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-messaging-compat.js [none]
+[debug] [2021-10-17T17:56:20.557Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-messaging-compat.js 200
+[debug] [2021-10-17T17:56:20.558Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-messaging-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/9.1.3/firebase-messaging-compat.js HTTP/1.1" 200 37942 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/9.1.3/firebase-messaging-compat.js HTTP/1.1\" 200 37942 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[debug] [2021-10-17T17:56:20.563Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-storage-compat.js [none]
+[debug] [2021-10-17T17:56:20.580Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics-compat.js [none]
+[debug] [2021-10-17T17:56:20.584Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-storage-compat.js 200
+[debug] [2021-10-17T17:56:20.584Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-storage-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/9.1.3/firebase-storage-compat.js HTTP/1.1" 200 38184 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/9.1.3/firebase-storage-compat.js HTTP/1.1\" 200 38184 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[debug] [2021-10-17T17:56:20.589Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-remote-config-compat.js [none]
+[debug] [2021-10-17T17:56:20.601Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics-compat.js 200
+[debug] [2021-10-17T17:56:20.601Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/9.1.3/firebase-analytics-compat.js HTTP/1.1" 200 26026 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/9.1.3/firebase-analytics-compat.js HTTP/1.1\" 200 26026 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/init.js?useEmulator=true HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/init.js?useEmulator=true HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[debug] [2021-10-17T17:56:20.614Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-remote-config-compat.js 200
+[debug] [2021-10-17T17:56:20.614Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/9.1.3/firebase-remote-config-compat.js [stream]
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /__/firebase/9.1.3/firebase-remote-config-compat.js HTTP/1.1" 200 27533 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /__/firebase/9.1.3/firebase-remote-config-compat.js HTTP/1.1\" 200 27533 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] "GET /favicon.ico HTTP/1.1" 200 3870 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [17/Oct/2021:17:56:20 +0000] \"GET /favicon.ico HTTP/1.1\" 200 3870 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36\""}}

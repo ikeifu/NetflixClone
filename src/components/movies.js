@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
+<<<<<<< HEAD
 import { collection, addDoc, doc, setDoc, updateDoc } from "firebase/firestore";
 const Movies = ({ movieData, reviewedMovies }) => {
   const [receivedMovieRequest, setReceivedMovieRequest] = useState(true);
@@ -8,6 +9,10 @@ const Movies = ({ movieData, reviewedMovies }) => {
       setReceivedMovieRequest(false);
     }
   }, [movieData]);
+=======
+import { doc, setDoc, updateDoc } from "firebase/firestore";
+const Movies = ({ movieData, movies }) => {
+>>>>>>> f146931
   const buttonHandler = (action, movie, reviews) => {
     switch (action) {
       case "Likes":
@@ -15,6 +20,8 @@ const Movies = ({ movieData, reviewedMovies }) => {
         break;
       case "Dislikes":
         updateReview(action, movie, reviews);
+        break;
+      default:
         break;
     }
   };
@@ -46,7 +53,11 @@ const Movies = ({ movieData, reviewedMovies }) => {
   };
 
   const renderMovies = () =>
+<<<<<<< HEAD
     movieData > 1
+=======
+    movieData
+>>>>>>> f146931
       ? movieData.map((movie) => (
           <li>
             <h1>{movie.Title}</h1>
@@ -78,9 +89,7 @@ const Movies = ({ movieData, reviewedMovies }) => {
             </button>
           </li>
         ))
-      : "No search";
-  return (
-    <ol>{receivedMovieRequest ? "Search for a movie" : renderMovies()}</ol>
-  );
+      : "Search for a movie";
+  return <ol>{renderMovies()}</ol>;
 };
 export default Movies;
