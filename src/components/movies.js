@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
-import { collection, addDoc, doc, setDoc, updateDoc } from "firebase/firestore";
-const Movies = ({ movieData, movies }) => {
-  const [receivedMovieRequest, setReceivedMovieRequest] = useState(true);
-  const moviesCollectionRef = collection(db, "movies");
+import { doc, setDoc, updateDoc } from "firebase/firestore";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+const Movies = ({ movieTitle, reviewedMovies }) => {
+  const [movieData, setMoviesData] = useState([]);
+  const API = "13d90aef";
   useEffect(() => {
-    if (movieData) {
-      setReceivedMovieRequest(false);
-    }
-  }, [movieData]);
+    axios
+      .get(`http://www.omdbapi.com/?s=${movieTitle}&apikey=${API}`)
+      .then((response) => {
+        setMoviesData(response.data.Search);
+      });
+  }, [movieTitle]);
   const buttonHandler = (action, movie, reviews) => {
     switch (action) {
       case "Likes":
@@ -37,9 +40,9 @@ const Movies = ({ movieData, movies }) => {
     updateDoc(movieDoc, newReview);
   };
 
-  const movieReviewHandler = (currentMovie, rating) => {
-    for (let i = 0; i < movies.length; i++) {
-      const movie = movies[i];
+  const movieReviews = (currentMovie, rating) => {
+    for (let i = 0; i < reviewedMovies.length; i++) {
+      const movie = reviewedMovies[i];
       const movieTitle = movie.title;
       if (movieTitle === currentMovie) {
         return movie[rating];
@@ -59,25 +62,25 @@ const Movies = ({ movieData, movies }) => {
             <h1>{movie.Title}</h1>
             <img src={movie.Poster} />
             <p>{movie.Year}</p>
-            <span>Liked:{movieReviewHandler(movie.Title, "Likes")}</span>
+            <span>Liked:{movieReviews(movie.Title, "Likes")}</span>
             <button
               onClick={() =>
                 buttonHandler(
                   "Likes",
                   movie.Title,
-                  movieReviewHandler(movie.Title, "Likes")
+                  movieReviews(movie.Title, "Likes")
                 )
               }
             >
               Like
             </button>
-            <span>Disliked:{movieReviewHandler(movie.Title, "Dislikes")}</span>
+            <span>Disliked:{movieReviews(movie.Title, "Dislikes")}</span>
             <button
               onClick={() =>
                 buttonHandler(
                   "Dislikes",
                   movie.Title,
-                  movieReviewHandler(movie.Title, "Dislikes")
+                  movieReviews(movie.Title, "Dislikes")
                 )
               }
             >
@@ -86,8 +89,6 @@ const Movies = ({ movieData, movies }) => {
           </li>
         ))
       : "No search";
-  return (
-    <ol>{receivedMovieRequest ? "Search for a movie" : renderMovies()}</ol>
-  );
+  return <ol>{renderMovies()}</ol>;
 };
 export default Movies;

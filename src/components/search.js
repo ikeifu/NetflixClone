@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-const Search = ({ movieTitle, setMovieTitle }) => {
+import React, { useState } from "react";
+const Search = ({ setMovieTitle }) => {
   const [currentMovie, setCurrentMovie] = useState("");
   const submitButtonHandler = () => {
     setMovieTitle(currentMovie);
