@@ -14,16 +14,16 @@ const Movies = ({ movieTitle, reviewedMovies }) => {
       });
   }, [movieTitle]);
 
-  const buttonHandler = (action, movie, reviews) => {
+  const buttonHandler = (action, movie) => {
     switch (action) {
       case "Likes":
         {
-          updateReview(action, movie, reviews);
+          updateReview(action, movie);
         }
         break;
       case "Dislikes":
         {
-          updateReview(action, movie, reviews);
+          updateReview(action, movie);
         }
         break;
       default:
@@ -31,13 +31,13 @@ const Movies = ({ movieTitle, reviewedMovies }) => {
     }
   };
 
-  const updateReview = (action, movie, reviews) => {
+  const updateReview = (action, movie) => {
     const movieDoc = doc(db, "movies", movie);
     let newReview;
     if (action === "Likes") {
-      newReview = { Likes: reviews + 1 };
+      newReview = { Likes: reviewedMovies[movie][action] + 1 };
     } else {
-      newReview = { Dislikes: reviews + 1 };
+      newReview = { Dislikes: reviewedMovies[movie][action] + 1 };
     }
     updateDoc(movieDoc, newReview);
   };
@@ -47,10 +47,6 @@ const Movies = ({ movieTitle, reviewedMovies }) => {
       return reviewedMovies[currentMovie][rating];
     }
     createReview(currentMovie);
-  };
-
-  const getReviews = (currentMovie, rating) => {
-    return reviewedMovies[currentMovie][rating];
   };
   const createReview = (movie) => {
     setDoc(doc(db, "movies", movie), { Likes: 0, Dislikes: 0 });
@@ -64,27 +60,11 @@ const Movies = ({ movieTitle, reviewedMovies }) => {
             <img src={movie.Poster} />
             <p>{movie.Year}</p>
             <span>Liked:{movieReviews(movie.Title, "Likes")}</span>
-            <button
-              onClick={() =>
-                buttonHandler(
-                  "Likes",
-                  movie.Title,
-                  movieReviews(movie.Title, "Likes")
-                )
-              }
-            >
+            <button onClick={() => buttonHandler("Likes", movie.Title)}>
               Like
             </button>
             <span>Disliked:{movieReviews(movie.Title, "Dislikes")}</span>
-            <button
-              onClick={() =>
-                buttonHandler(
-                  "Dislikes",
-                  movie.Title,
-                  movieReviews(movie.Title, "Dislikes")
-                )
-              }
-            >
+            <button onClick={() => buttonHandler("Dislikes", movie.Title)}>
               Dislike
             </button>
           </li>
