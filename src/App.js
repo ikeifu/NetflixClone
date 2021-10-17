@@ -5,10 +5,11 @@ import { onSnapshot, collection } from "firebase/firestore";
 import Search from "./components/search";
 import Movies from "./components/movies";
 
+require("dotenv").config();
+
 function App() {
   const [movieTitle, setMovieTitle] = useState("");
   const [reviewedMovies, setReviewedMovies] = useState({});
-
   const moviesCollectionRef = collection(db, "movies");
 
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
       );
     });
   }, []);
+
   return (
     <div>
       <Search setMovieTitle={setMovieTitle} />
