@@ -5,13 +5,15 @@ import axios from "axios";
 const Movies = ({ movieTitle, reviewedMovies }) => {
   const [movieData, setMoviesData] = useState([]);
   const API = "13d90aef";
+
   useEffect(() => {
     axios
-      .get(`http://www.omdbapi.com/?s=${movieTitle}&apikey=${API}`)
+      .get(`https://www.omdbapi.com/?s=${movieTitle}&apikey=${API}`)
       .then((response) => {
         setMoviesData(response.data.Search);
       });
   }, [movieTitle]);
+
   const buttonHandler = (action, movie, reviews) => {
     switch (action) {
       case "Likes":
@@ -41,16 +43,15 @@ const Movies = ({ movieTitle, reviewedMovies }) => {
   };
 
   const movieReviews = (currentMovie, rating) => {
-    for (let i = 0; i < reviewedMovies.length; i++) {
-      const movie = reviewedMovies[i];
-      const movieTitle = movie.title;
-      if (movieTitle === currentMovie) {
-        return movie[rating];
-      }
+    if (reviewedMovies[currentMovie]) {
+      return reviewedMovies[currentMovie][rating];
     }
     createReview(currentMovie);
   };
 
+  const getReviews = (currentMovie, rating) => {
+    return reviewedMovies[currentMovie][rating];
+  };
   const createReview = (movie) => {
     setDoc(doc(db, "movies", movie), { Likes: 0, Dislikes: 0 });
   };

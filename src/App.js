@@ -10,18 +10,17 @@ function App() {
   const [reviewedMovies, setReviewedMovies] = useState({});
 
   const moviesCollectionRef = collection(db, "movies");
-  useEffect(
-    () =>
-      onSnapshot(moviesCollectionRef, (response) =>
-        setReviewedMovies(
-          response.docs.map((doc) => ({
-            title: doc.id,
-            ...doc.data(),
-          }))
-        )
-      ),
-    []
-  );
+
+  useEffect(() => {
+    onSnapshot(moviesCollectionRef, (response) => {
+      setReviewedMovies(
+        response.docs.reduce((accu, doc) => {
+          accu[doc.id] = doc.data();
+          return accu;
+        }, {})
+      );
+    });
+  }, []);
   return (
     <div>
       <Search setMovieTitle={setMovieTitle} />

@@ -16,8 +16,7 @@ const Search = ({ setMovieTitle }) => {
         onChange={(e) => setCurrentMovie(e.target.value)}
       />
       <button type="submit" onClick={() => submitButtonHandler()}>
-        {" "}
-        Search{" "}
+        Search
       </button>
     </>
   );
