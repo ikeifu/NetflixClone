@@ -1,0 +1,22 @@
+.searchForm {
+  padding: 20px;
+}
+
+.searchHeader {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+.searchBox {
+  margin-left: 10px;
+}
+.button {
+  background-color: #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 5px;
+}

@@ -2,10 +2,8 @@ import { db } from "./firebase";
 import React, { useState, useEffect } from "react";
 import { onSnapshot, collection } from "firebase/firestore";
 
-import Search from "./components/search";
-import Movies from "./components/movies";
-
-require("dotenv").config();
+import Search from "./components/Search/search";
+import Movies from "./components/Movies/movies";
 
 function App() {
   const [movieTitle, setMovieTitle] = useState("");
