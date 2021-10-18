@@ -4,4 +4,4 @@ A simple and intuitive movie search that allows you to review the movies that yo
 
 ## Deployed
 
-[a link] https://like-trackers.web.app
+https://like-trackers.web.app
