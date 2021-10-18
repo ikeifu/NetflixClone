@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./styles.css";
-const Search = ({ setMovieTitle }) => {
+const Search = ({ setSearchTerm }) => {
   const [currentMovie, setCurrentMovie] = useState("");
+
   const submitButtonHandler = (e) => {
     e.preventDefault();
-    setMovieTitle(currentMovie);
+    setSearchTerm(currentMovie);
   };
+
   return (
     <form onSubmit={(e) => submitButtonHandler(e)} className="searchForm">
       <label for="header-search" className="searchHeader">

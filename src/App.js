@@ -6,7 +6,7 @@ import Search from "./components/Search/search";
 import Movies from "./components/Movies/movies";
 
 function App() {
-  const [movieTitle, setMovieTitle] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [reviewedMovies, setReviewedMovies] = useState({});
   const moviesCollectionRef = collection(db, "movies");
 
@@ -23,8 +23,8 @@ function App() {
 
   return (
     <div>
-      <Search setMovieTitle={setMovieTitle} />
-      <Movies movieTitle={movieTitle} reviewedMovies={reviewedMovies} />
+      <Search setSearchTerm={setSearchTerm} />
+      <Movies searchTerm={searchTerm} reviewedMovies={reviewedMovies} />
     </div>
   );
 }
